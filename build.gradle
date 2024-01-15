@@ -40,6 +40,12 @@ dependencies {
     implementation 'javax.servlet:jstl'
     // JASPER - 톰캣에서 jsp 컴파일하는 엔진이 포함되어 있지 않기 때문에, jsp 파일 컴파일하기 위한 의존성 추가
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+    // Swagger
+//    implementation "io.springfox:springfox-boot-starter:3.0.0"
+//    implementation "io.springfox:springfox-swagger-ui:3.0.0"
+
+    implementation "org.springframework.boot:spring-boot-starter-actuator:2.7.2"
 }
 
 tasks.named('test') {

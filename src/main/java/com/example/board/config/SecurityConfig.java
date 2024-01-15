@@ -21,7 +21,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] PERMIT_URL_ARRAY = {
             "/", "/auth/**", "/js/**", "/css/**", "/image/**", "/dummy/**",
-            "/h2-console/**"
+            "/h2-console/**",
+            /* swagger v2 */
+            "/v2/api-docs",
+            "/swagger-resources",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**",
+            /* swagger v3 */
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/actuator/**"
     };
 
     @Bean
