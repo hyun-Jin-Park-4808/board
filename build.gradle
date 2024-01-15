@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '1.8'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.testng:testng:7.1.0'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'com.mysql:mysql-connector-java'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    // spring security tag library
+    implementation 'org.springframework.security:spring-security-taglibs'
+    // JSTL 문법 사용하기 위함.
+    implementation 'javax.servlet:jstl'
+    // JASPER - 톰캣에서 jsp 컴파일하는 엔진이 포함되어 있지 않기 때문에, jsp 파일 컴파일하기 위한 의존성 추가
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
